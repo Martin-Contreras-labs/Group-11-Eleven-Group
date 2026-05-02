@@ -1,0 +1,1 @@
+# La entrega 1 pide un workflow de CI que se ejecute cada vez que se haga un push a la rama main. Este workflow debe ejecutar los tests unitarios y de integración, y si alguno de ellos falla, el workflow debe marcarse como fallido.
