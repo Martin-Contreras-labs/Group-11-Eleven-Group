@@ -49,24 +49,7 @@
 | **6. Response Measure**          | All 100 requests are processed and responded to within 2 seconds                                                   |
 | **Priority**                     | High                                                                                                               |
 | **Difficulty**                   | High                                                                                                               |
-
-### Scenario 2: Scalability
-
-**Justification**: The platform is expected to serve millions of customers and hundreds of CleverHubs simultaneously. The platform must handle multiple smart homes without performance hits to allow the business to grow and add more houses to their customer base.
-
-|                                  |                                                                                                                    |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **ID**                           | QA-02                                                                                                              |
-| **Category / Quality Attribute** | Scalability                                                                                                        |
-| **Description**                  | Multiple CleverHubs send requests simultaneously and the platform handles them all without performance degradation |
-| **1. Stimulus Source**           | Multiple CleverHubs connecting simultaneously                                                                      |
-| **2. Stimulus**                  | 100 CleverHubs send a GS request at the same time                                                                  |
-| **3. Environment**               | Platform running under normal operating conditions                                                                 |
-| **4. Artifact**                  | CleverHub connection handler                                                                                       |
-| **5. Response**                  | The platform handles all requests concurrently without dropping connections or degrading response time             |
-| **6. Response Measure**          | All 100 requests are processed and responded to within 2 seconds                                                   |
-| **Priority**                     | High                                                                                                               |
-| **Difficulty**                   | High                                                                                                               |
+                                                                                                           |
 
 ## Domain Model
 
