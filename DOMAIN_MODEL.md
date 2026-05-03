@@ -56,7 +56,7 @@
 ```mermaid
 ---
 config:
-  theme: redux
+  theme: default
 ---
 classDiagram
     class User {
