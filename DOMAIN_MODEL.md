@@ -54,9 +54,7 @@
 ## Domain Model
 
 ```mermaid
----
-config:
-  theme: default
+
 ---
 classDiagram
     class User {
