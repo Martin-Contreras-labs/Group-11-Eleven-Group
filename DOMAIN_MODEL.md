@@ -54,8 +54,6 @@
 ## Domain Model
 
 ```mermaid
-
----
 classDiagram
     class User {
         username
