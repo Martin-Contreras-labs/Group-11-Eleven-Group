@@ -49,7 +49,12 @@
 | **6. Response Measure**          | All 100 requests are processed and responded to within 2 seconds                                                   |
 | **Priority**                     | High                                                                                                               |
 | **Difficulty**                   | High                                                                                                               |
-                                                                                                           |
+
+## Technical Constraints
+
+1. **CleverHub Communication Protocol**: The platform must implement the exact text-based TCP/IP protocol defined by the CleverHub team, including its message format (`HL`, `GS`, `SS`, `ACC`, `REF`, `SU`, `OK`, `ERR`) and parameter structure. This is a constraint because the protocol is defined externally by another team and cannot be modified. Any deviation would make the platform incompatible with real CleverHubs.
+
+2. **Python**: The team agreed to use Python as the main programming language for this project. This is a constraint because all implementation, tooling (mypy, pytest) and Docker setup must be compatible with Python, limiting the choice of frameworks and libraries available.
 
 ## Domain Model
 
