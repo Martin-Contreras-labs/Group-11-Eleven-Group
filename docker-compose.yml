@@ -1,0 +1,17 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: cleverhome-backend:latest
+    container_name: cleverhome-backend
+    ports:
+      - "5000:5000"
+    stdin_open: true      # keep STDIN open for the console menu
+    tty: true             # allocate a pseudo-TTY
+    networks:
+      - cleverhome-net
+
+networks:
+  cleverhome-net:
+    driver: bridge
