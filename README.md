@@ -5,6 +5,10 @@ Software Design Repository — Group 11
 
 **Members:** Martin Contreras · Matias de la Sota · Benjamin Duran
 
+- Matías de la Sota: Unit tests, github implementation, main functionalities, definition of quality attribute scenarios, technical constraints and creation of domain Model diagram of the system.
+- Benjamín Durán: Dockerfile, Docker-compose, update Readme.md, update AI.md, C4 models context and containers, UML comunication protocol diagram, refactorization of code and robust implementation to verify the prtocol works correctly with read-only devices.
+- Martin Contreras: Console UI and conection with professor CleverHubs image, initial structure to the project, credentials "system" for auth and parts of protocol implementation and interaction.
+
 ## Main Functionalities Included in This Submission
 
 1. **CleverHub protocol handling** — Parse and serialize all protocol message types: `HL`, `GS`, `SS`, `ACC`, `REF`, `SU`, `OK`, `ERR`.
