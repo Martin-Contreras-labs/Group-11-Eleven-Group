@@ -1,1 +1,62 @@
-# La entrega 1 pide un workflow de CI que se ejecute cada vez que se haga un push a la rama main. Este workflow debe ejecutar los tests unitarios y de integración, y si alguno de ellos falla, el workflow debe marcarse como fallido.
+# La entrega 1 pide un workflow de CI que se ejecute cada vez que se haga un push a la rama feature/P1A. Este workflow debe ejecutar los tests unitarios y de integración, y si alguno de ellos falla, el workflow debe marcarse como fallido.
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  test:
+    name: Run unit tests (pytest)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run pytest
+        working-directory: backend
+        env:
+          PYTHONPATH: app
+        run: pytest --tb=short -v
+
+  typecheck:
+    name: Type check (mypy)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run mypy
+        working-directory: backend
+        run: mypy app/cleverhome --config-file mypy.ini
+
+  docker-build:
+    name: Build Docker image (backend)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: docker build -t cleverhome-backend:ci ./backend
